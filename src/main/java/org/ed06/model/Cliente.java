@@ -1,6 +1,6 @@
 package org.ed06.model;
 
-class Cliente {
+public class Cliente {
     public int id;
     public String nombre;
     public String dni;
@@ -26,6 +26,7 @@ class Cliente {
         if (nombre == null || nombre.trim().length() < 3) {
             throw new IllegalArgumentException("El nombre no es válido");
         }
+        return true;
     }
 
     private boolean validarEmail(String email) {
