@@ -68,7 +68,7 @@ public class Reserva {
 
     public void mostrarReserva() {
         System.out.println("Reserva #" + id);
-        System.out.println("Habitación: " + habitacion.getNumero());
+        System.out.println("Habitación #" + habitacion.getNumero() + " - Tipo: " + habitacion.getTipo() + " - Precio base: " + habitacion.getPrecioBase());
         System.out.println("Cliente: " + cliente.nombre);
         System.out.println("Fecha de inicio: " + fechaInicio.toString());
         System.out.println("Fecha de fin: " + fechaFin.toString());

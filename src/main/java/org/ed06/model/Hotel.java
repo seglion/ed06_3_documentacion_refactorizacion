@@ -8,9 +8,9 @@ public class Hotel {
     private String direccion;
     private String telefono;
 
-    private Map<Integer,Cliente> clientes = new HashMap<>();
-    private List<Habitacion> habitaciones = new ArrayList<>();
-    private List<Reserva> reservas = new ArrayList<>();
+    private final Map<Integer,Cliente> clientes = new HashMap<>();
+    private final List<Habitacion> habitaciones = new ArrayList<>();
+    private final List<Reserva> reservas = new ArrayList<>();
 
     // Método para agregar una nueva habitación al hotel
     public void registrarHabitacion(String tipo, double precioBase) {
@@ -20,10 +20,19 @@ public class Hotel {
 
     public void listarHabitacionesDisponibles() {
         for(Habitacion habitacion : habitaciones) {
-            if(habitacion.disponible) {
-                System.out.println("Habitación #" + habitacion.numero + " - Tipo: " + habitacion.tipo + " - Precio base: " + habitacion.precioBase);
+            if(habitacion.isDisponible()) {
+                System.out.println("Habitación #" + habitacion.getNumero() + " - Tipo: " + habitacion.getTipo() + " - Precio base: " + habitacion.getPrecioBase());
             }
         }
+    }
+
+    public Habitacion getHabitacion(int numero) {
+        for(Habitacion habitacion : habitaciones) {
+            if(habitacion.getNumero() == numero) {
+                return habitacion;
+            }
+        }
+        return null;
     }
 
     /**

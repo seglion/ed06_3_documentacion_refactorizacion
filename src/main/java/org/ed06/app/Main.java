@@ -1,5 +1,6 @@
 package org.ed06.app;
 
+import org.ed06.model.Habitacion;
 import org.ed06.model.Hotel;
 
 import java.time.LocalDate;
@@ -60,7 +61,11 @@ public class Main {
                 int diaSalida = scanner.nextInt();
                 scanner.nextLine();
                 LocalDate fechaSalida = LocalDate.of(anioSalida, mesSalida, diaSalida);
-                hotel.reservarHabitacion(clienteId, tipo, fechaEntrada, fechaSalida);
+                int numeroHabitacion = hotel.reservarHabitacion(clienteId, tipo, fechaEntrada, fechaSalida);
+                System.out.println("Datos de la habitacion");
+                Habitacion habitacion = hotel.getHabitacion(numeroHabitacion);
+                System.out.println("Habitación #" + habitacion.getNumero() + " - Tipo: " + habitacion.getTipo() + " - Precio base: " + habitacion.getPrecioBase());
+                System.out.println("Número de habitación reservada: " + numeroHabitacion);
                 break;
             case LISTAR_RESERVAS:
                 hotel.listarReservas();
