@@ -21,7 +21,17 @@ public class Main {
         String tipo;
 
         // Creamos un menú para el administrador con las diferentes opciones proporcionadas
-        Hotel hotel = new Hotel();
+        Hotel hotel = new Hotel("El mirador", "Calle Entornos de Desarrollo 6", "123456789");
+
+        // Registramos algunas habitaciones
+        hotel.registrarHabitacion("SIMPLE", 50);
+        hotel.registrarHabitacion("DOBLE", 80);
+        hotel.registrarHabitacion("SUITE", 120);
+        hotel.registrarHabitacion("LITERAS", 200);
+        hotel.registrarHabitacion("SIMPLE", 65);
+        hotel.registrarHabitacion("DOBLE", 100);
+        hotel.registrarHabitacion("SUITE", 150);
+        hotel.registrarHabitacion("LITERAS", 250);
 
         // Mostramos el menú
         mostrarMenu();
@@ -88,8 +98,6 @@ public class Main {
                 System.out.println("Opción no válida");
                 break;
         }
-
-
     }
 
     private static void mostrarMenu() {
