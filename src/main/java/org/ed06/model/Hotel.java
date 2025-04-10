@@ -56,7 +56,6 @@ public class Hotel {
     // crea una nueva reserva y la añade a la lista de reservas y devuelve el número de la habitación reservada.
     // Antes de crear la reserva, comprueba si el cliente pasa a ser VIP tras la nueva reserva,
     // en caso de que haya realizado más de 3 reservas en el último año.
-
     public int reservarHabitacion(int clienteId, String tipo, LocalDate fechaEntrada, LocalDate fechaSalida) {
         // Comprobamos si hay habitaciones en el hotel
         if(!habitaciones.isEmpty()) {

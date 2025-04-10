@@ -44,25 +44,27 @@ public class Reserva {
         return precioTotal;
     }
 
-    /**
-     * Calcula el precio total de la reserva. Para calcular el precio total, se debe calcular el precio base de la habitación por el número de noches de la reserva. En el caso de que el cliente sea vip, se aplicará un descuento del 10%. Además, si el intervalo de fechas es mayor a 7 días, se aplicará un descuento adicional del 5%.
-     *
-     *
-     * @return precio total de la reserva
-     */
+    // Calcula el precio total de la reserva. Para calcular el precio total, se debe calcular el precio base de la habitación por el número de noches de la reserva. En el caso de que el cliente sea vip, se aplicará un descuento del 10%. Además, si el intervalo de fechas es mayor a 7 días, se aplicará un descuento adicional del 5%.
+    // Devuelve precio total de la reserva
     public double calcularPrecioFinal() {
+        //calculamos los días de la reserva
         int n = fechaFin.getDayOfYear() - fechaInicio.getDayOfYear();
+        // Calculamos el precio base de la habitación por el número de noches de la reserva
         double pb = habitacion.getPrecioBase() * n;
+        // Declaramos la variable para almacenar el precio final
         double pf = pb;
 
+        // Si el cliente es VIP, aplicamos un descuento del 10%
         if (cliente.esVip) {
             pf *= 0.9;
         }
 
+        // Si el intervalo de fechas es mayor a 7 días, aplicamos un descuento adicional del 5%
         if (n > 7) {
             pf *= 0.95;
         }
 
+        // Devolvemos el precio final
         return pf;
     }
 
