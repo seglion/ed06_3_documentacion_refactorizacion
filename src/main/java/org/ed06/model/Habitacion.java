@@ -5,13 +5,13 @@ public class Habitacion {
     private String tipo; // "SIMPLE", "DOBLE", "SUITE"
     private double precioBase;
 
-    //Todo pendeinte cambiar la forma de gestionar la disponibilidad en base a las fechas de las reservas
+    //Todo pendiente cambiar la forma de gestionar la disponibilidad en base a las fechas de las reservas
     private boolean disponible;
 
     public Habitacion(int numero, String tipo, double precioBase) {
         this.numero = numero;
         this.tipo = tipo;
-        this.precioBase = this.precioBase;
+        this.precioBase = precioBase;
         this.disponible = true;
     }
 

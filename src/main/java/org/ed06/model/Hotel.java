@@ -63,10 +63,10 @@ public class Hotel {
             if(this.clientes.get(clienteId) != null) {
                 Cliente cliente = this.clientes.get(clienteId);
                 // comprobamos si las fechas son coherentes
-                if(fechaEntrada.isAfter(fechaSalida)) {
+                if(fechaEntrada.isBefore(fechaSalida)) {
                     //buscamos una habitación disponible
                     for(Habitacion habitacion : habitaciones) {
-                        if(habitacion.getTipo().equals(tipo) && habitacion.isDisponible()) {
+                        if(habitacion.getTipo().equals(tipo.toUpperCase()) && habitacion.isDisponible()) {
                             // Comprobamos si el cliente pasa a ser vip tras la nueva reserva
                             int numReservas = 0;
                             for (List<Reserva> reservasHabitacion : reservasPorHabitacion.values()) {
